@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Poker Randomizer</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 30px;
+      background-color: #f8f9fa;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #number {
+      font-size: 72px;
+      margin: 20px;
+      color: #007bff;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 10px 24px;
+      margin: 6px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .presets {
+      margin-top: 20px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 20px;
+      }
+
+      #number {
+        font-size: 56px;
+      }
+
+      button {
+        font-size: 18px;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Poker Randomizer</h1>
+  <div id="number">–</div>
+  <button onclick="generate()">🎲 Generuj</button>
+
+  <div class="presets">
+    <button onclick="generateUntil(80)">80 %</button>
+    <button onclick="generateUntil(60)">60 %</button>
+    <button onclick="generateUntil(40)">40 %</button>
+    <button onclick="generateUntil(20)">20 %</button>
+  </div>
+
+  <script>
+    function generate() {
+      const num = Math.floor(Math.random() * 100);
+      document.getElementById("number").textContent = num;
+    }
+
+    function generateUntil(threshold) {
+      const num = Math.floor(Math.random() * 100);
+      document.getElementById("number").textContent = num + " (" + (num < threshold ? "✔️" : "❌") + ")";
+    }
+  </script>
+</body>
+</html>
