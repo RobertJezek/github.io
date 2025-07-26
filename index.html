@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Poker🎲Randomizer🎲</title>
+  <title>Poker🎲Randomizer</title>
   <style>
     body {
       font-family: sans-serif;
@@ -71,7 +71,7 @@
 <body>
   <h1>Poker Randomizer</h1>
   <div id="number">–</div>
-  <button onclick="generate()">🎲 Generuj</button>
+  <button onclick="generate()">🎲</button>
 
   <div class="presets">
     <button onclick="generateUntil(80)">80 %</button>
@@ -84,6 +84,10 @@
     <input type="number" id="customInput" min="1" max="100" placeholder="např. 73" />
     <button onclick="customCheck()">🎲Generuj</button>
   </div>
+  <div style="margin-top: 40px;">
+  <button onclick="generateSymbol()">🃏 Generuj symbol</button>
+  <div id="symbol" style="font-size: 64px; margin-top: 20px;"></div>
+</div>
 
   <script>
     function generate() {
@@ -108,6 +112,11 @@
       const num = Math.floor(Math.random() * 100);
       document.getElementById("number").textContent = num + " (" + (num < threshold ? "✅" : "⏸️") + ")";
     }
+    function generateSymbol() {
+  const symbols = ["♥", "♠", "♦", "♣"];
+  const randomIndex = Math.floor(Math.random() * symbols.length);
+  document.getElementById("symbol").textContent = symbols[randomIndex];
+}
   </script>
 </body>
 </html>
