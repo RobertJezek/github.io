@@ -43,6 +43,15 @@
       margin-top: 20px;
     }
 
+    input[type="number"] {
+      font-size: 18px;
+      padding: 8px;
+      width: 80px;
+      margin: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 20px;
@@ -71,6 +80,11 @@
     <button onclick="generateUntil(20)">20 %</button>
   </div>
 
+  <div style="margin-top: 30px;">
+    <input type="number" id="customInput" min="1" max="100" placeholder="např. 73" />
+    <button onclick="customCheck()">Zkontroluj</button>
+  </div>
+
   <script>
     function generate() {
       const num = Math.floor(Math.random() * 100);
@@ -79,8 +93,22 @@
 
     function generateUntil(threshold) {
       const num = Math.floor(Math.random() * 100);
-      document.getElementById("number").textContent = num + " (" + (num < threshold ? "✔️" : "❌") + ")";
+      document.getElementById("number").textContent = num + " (" + (num < threshold ? "🟢" : "⏸️") + ")";
+    }
+
+    function customCheck() {
+      const input = document.getElementById("customInput").value;
+      const threshold = parseInt(input);
+
+      if (isNaN(threshold) || threshold < 1 || threshold > 100) {
+        alert("Zadej prosím číslo mezi 1 a 100");
+        return;
+      }
+
+      const num = Math.floor(Math.random() * 100);
+      document.getElementById("number").textContent = num + " (" + (num < threshold ? "🟢" : "⏸️") + ")";
     }
   </script>
 </body>
 </html>
+
