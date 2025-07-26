@@ -85,7 +85,7 @@
     <button onclick="customCheck()">🎲Generuj</button>
   </div>
   <div style="margin-top: 40px;">
-  <button onclick="generateSymbol()">🃏 Generuj symbol</button>
+  <button onclick="generateSymbol()">🎰</button>
   <div id="symbol" style="font-size: 64px; margin-top: 20px;"></div>
 </div>
 
@@ -113,7 +113,7 @@
       document.getElementById("number").textContent = num + " (" + (num < threshold ? "✅" : "⏸️") + ")";
     }
     function generateSymbol() {
-  const symbols = ["♥", "♠", "♦", "♣"];
+  const symbols = ["♥️", "♠️", "♦️", "♣️"];
   const randomIndex = Math.floor(Math.random() * symbols.length);
   document.getElementById("symbol").textContent = symbols[randomIndex];
 }
