@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Poker Randomizer</title>
+  <title>Poker🎲Randomizer🎲</title>
   <style>
     body {
       font-family: sans-serif;
@@ -82,7 +82,7 @@
 
   <div style="margin-top: 30px;">
     <input type="number" id="customInput" min="1" max="100" placeholder="např. 73" />
-    <button onclick="customCheck()">Zkontroluj</button>
+    <button onclick="customCheck()">🎲Generuj</button>
   </div>
 
   <script>
@@ -93,7 +93,7 @@
 
     function generateUntil(threshold) {
       const num = Math.floor(Math.random() * 100);
-      document.getElementById("number").textContent = num + " (" + (num < threshold ? "🟢" : "⏸️") + ")";
+      document.getElementById("number").textContent = num + " (" + (num < threshold ? "✅" : "⏸️") + ")";
     }
 
     function customCheck() {
@@ -106,7 +106,7 @@
       }
 
       const num = Math.floor(Math.random() * 100);
-      document.getElementById("number").textContent = num + " (" + (num < threshold ? "🟢" : "⏸️") + ")";
+      document.getElementById("number").textContent = num + " (" + (num < threshold ? "✅" : "⏸️") + ")";
     }
   </script>
 </body>
